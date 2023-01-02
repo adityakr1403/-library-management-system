@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.loginPageController">
+   <children>
+      <Label layoutX="220.0" layoutY="32.0" text="NEXS LIBRARY">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="82.0" layoutY="116.0" text="Username :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="164.0" text="Password :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userNameTextField" layoutX="220.0" layoutY="121.0" prefHeight="26.0" prefWidth="228.0" />
+      <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="97.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@nexs-logo-removebg-preview.png" />
+         </image></ImageView>
+      <PasswordField fx:id="userPasswordField" layoutX="220.0" layoutY="168.0" onKeyTyped="#userPasswordFieldTextChange" prefHeight="26.0" prefWidth="228.0" />
+      <CheckBox fx:id="showPasswordCheckBox" layoutX="470.0" layoutY="173.0" mnemonicParsing="false" onAction="#showPassword" text="show" />
+      <Button fx:id="loginButton" layoutX="231.0" layoutY="250.0" mnemonicParsing="false" onAction="#login" text="Login">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="showPasswordLabel" layoutX="217.0" layoutY="199.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.libraryInchargePageController">
+   <children>
+      <TabPane fx:id="tabPane" prefHeight="400.0" prefWidth="502.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+        <tabs>
+            <Tab fx:id="issueTab" text="Issue">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="348.0" layoutY="14.0" text="Issue Book">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="270.0" layoutY="91.0" text="Book Id : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="234.0" layoutY="127.0" text="Member Id : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="214.0" layoutY="168.0" text="Date of Issue : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="251.0" layoutY="212.0" text="Due Date : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="issuePageBookId" layoutX="405.0" layoutY="96.0" prefHeight="26.0" prefWidth="220.0" />
+                        <TextField fx:id="issuePageMemberId" layoutX="406.0" layoutY="132.0" prefHeight="26.0" prefWidth="220.0" />
+                        <DatePicker fx:id="issuePageDateOfIssue" layoutX="406.0" layoutY="173.0" />
+                        <Button fx:id="issuePageSubmitButton" layoutX="406.0" layoutY="279.0" mnemonicParsing="false" onAction="#issuePageSubmit" text="Submit" />
+                        <Button fx:id="issuePageResetButton" layoutX="529.0" layoutY="279.0" mnemonicParsing="false" onAction="#issuePageReset" text="Reset" />
+                        <DatePicker fx:id="issuePageDueDate" layoutX="406.0" layoutY="217.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="returnTab" text="Return">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="339.0" layoutY="14.0" text="Book Return">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="279.0" layoutY="82.0" text="Book Id : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="243.0" layoutY="133.0" text="Member Id : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="returnPageBookId" layoutX="405.0" layoutY="87.0" />
+                        <TextField fx:id="returnPageMemberId" layoutX="406.0" layoutY="138.0" />
+                        <Button fx:id="returnPageSubmitButton" layoutX="406.0" layoutY="217.0" mnemonicParsing="false" onAction="#returnPageSubmit" text="Submit" />
+                        <Button fx:id="returnPageResetButton" layoutX="502.0" layoutY="217.0" mnemonicParsing="false" onAction="#returnPageReset" text="Reset" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+          <Tab fx:id="viewBooksTab" text="View Books">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="viewBooksPageRefreshButton" mnemonicParsing="false" onAction="#viewBooksPageRefreshButton" text="Refresh" />
+                        <TableView fx:id="viewBooksPageTable" prefHeight="347.0" prefWidth="810.0" tableMenuButtonVisible="true">
+                          <columns>
+                            <TableColumn fx:id="viewBooksPageBookIdColumn" prefWidth="106.39999234676361" text="Book Id" />
+                            <TableColumn fx:id="viewBooksPageTitleColumn" minWidth="7.999969482421875" prefWidth="307.19998931884766" text="Title" />
+                              <TableColumn fx:id="viewBooksPageAuthorColumn" prefWidth="75.0" text="Author" />
+                              <TableColumn fx:id="viewBooksPagePriceColumn" minWidth="0.0" prefWidth="195.19998168945312" text="Price" />
+                              <TableColumn fx:id="viewBooksPageAvailableColumn" prefWidth="106.4000244140625" text="Available" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+            <Tab fx:id="addBookTab" text="Add Book">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="353.0" layoutY="14.0" text="Add Book">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="321.0" layoutY="91.0" text="Title : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="293.0" layoutY="126.0" text="Author : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="315.0" layoutY="160.0" text="Price : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addBookPageTitle" layoutX="429.0" layoutY="95.0" prefHeight="26.0" prefWidth="230.0" />
+                        <TextField fx:id="addBookPageAuthor" layoutX="429.0" layoutY="130.0" prefHeight="26.0" prefWidth="230.0" />
+                        <TextField fx:id="addBookPagePrice" layoutX="429.0" layoutY="165.0" prefHeight="26.0" prefWidth="230.0" />
+                        <Button fx:id="addBookPageSubmitButton" layoutX="432.0" layoutY="276.0" mnemonicParsing="false" onAction="#addBookPageSubmit" text="Submit" />
+                        <Button fx:id="addBookPageResetButton" layoutX="572.0" layoutY="276.0" mnemonicParsing="false" onAction="#addBookPageReset" text="Reset" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="issuedBooksTab" text="Issued Books">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="issueBooksPageRefreshButton" mnemonicParsing="false" onAction="#issueBooksPageRefresh" text="Refresh" />
+                        <TableView fx:id="issuedBooksTable" prefHeight="376.0" prefWidth="810.0" tableMenuButtonVisible="true">
+                           <columns>
+                              <TableColumn fx:id="issuedBooksPageBookIdColumn" prefWidth="106.39999234676361" text="Book Id" />
+                              <TableColumn fx:id="issuedBooksPageTitleColumn" minWidth="7.999969482421875" prefWidth="307.19998931884766" text="Title" />
+                              <TableColumn fx:id="issuedBooksPageAuthorColumn" prefWidth="75.0" text="Author" />
+                              <TableColumn fx:id="issuedBooksPageMemberIdColumn" minWidth="0.0" prefWidth="195.19998168945312" text="MemberId" />
+                              <TableColumn fx:id="issuedBooksDueDateColumn" prefWidth="75.0" text="Due Date" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+          <Tab fx:id="membersTab" text="Members">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="membersPageRefreshButton" mnemonicParsing="false" onAction="#membersPageRefresh" text="Refresh" />
+                        <TableView fx:id="membersPageTable" prefHeight="382.0" prefWidth="810.0" tableMenuButtonVisible="true">
+                           <columns>
+                              <TableColumn fx:id="membersPageMemberIdColumn" prefWidth="106.39999234676361" text="Member Id" />
+                              <TableColumn fx:id="membersPageNameColumn" minWidth="7.999969482421875" prefWidth="307.19998931884766" text="Name" />
+                              <TableColumn fx:id="membersPageProfessionColumn" prefWidth="75.0" text="Profession" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+            <Tab fx:id="addMemberTab" text="Add Member">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="335.0" layoutY="14.0" text="Add Member">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="298.0" layoutY="93.0" text="Name : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="251.0" layoutY="142.0" text="Profession : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addMemberPageName" layoutX="406.0" layoutY="98.0" prefHeight="26.0" prefWidth="230.0" />
+                        <TextField fx:id="addMemberPageProfession" layoutX="407.0" layoutY="147.0" prefHeight="26.0" prefWidth="230.0" />
+                        <Button fx:id="addMemberPageSubmitButton" layoutX="450.0" layoutY="240.0" mnemonicParsing="false" onAction="#addMemberPageSubmit" text="Submit" />
+                        <Button fx:id="addMemberPageResetButton" layoutX="546.0" layoutY="240.0" mnemonicParsing="false" onAction="#addMemberPageReset" text="Reset" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</HBox>

@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- url -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/library-management-system</property>
+
+
+        <!-- username -->
+        <property name="hibernate.connection.username">root</property>
+
+        <!-- password -->
+        <property name="hibernate.connection.password">root</property>
+
+
+        <!-- mysql driver -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <property name="hibernate.show_sql">true</property>
+
+
+
+    </session-factory>
+</hibernate-configuration>
